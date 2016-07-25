@@ -33,10 +33,7 @@ $(function() {
         it('no URL is empty', function() {
 
             allFeeds.forEach(function(feed) {
-
                 expect(feed.url).toBeDefined();
-
-
                 expect(feed.url).toMatch(/http/);
             })
 
@@ -50,7 +47,6 @@ $(function() {
         it('no name is empty', function() {
 
             allFeeds.forEach(function(feed) {
-
                 expect(feed.name).toBeDefined();
 
             })
@@ -135,9 +131,16 @@ $(function() {
 
     describe('New Feed Selection', function() {
 
+       var currentTitle = $('.header-title').html();
         beforeEach(function(done) {
             loadFeed(0, done);
         });
+        afterEach(function(done){
+        loadFeed(0, done);
+        })
+        it('content changes after new feed has been loaded', function(done){
+        expect($('.header-title').html()).not.toBe(currentTitle);
+    });
     });
 
 }());
