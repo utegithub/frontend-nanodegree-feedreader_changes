@@ -119,8 +119,6 @@ $(function() {
             it('content changes after new feed has been loaded', function(done) {
             loadFeed(1, function() {
                 second = $('.feed').children().text();
-                console.log(first);
-                console.log(second);
                 return second;
             }
             );
