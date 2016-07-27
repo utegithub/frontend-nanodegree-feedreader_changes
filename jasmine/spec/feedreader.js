@@ -23,7 +23,7 @@ $(function() {
         it('no name is empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
-                expect(feed.name).not.toBe(null);
+                expect(feed.name.length).not.toBe(0);
             });
         });
     });
